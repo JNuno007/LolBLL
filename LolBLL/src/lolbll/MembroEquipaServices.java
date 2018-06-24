@@ -38,4 +38,13 @@ public class MembroEquipaServices {
         
     }
     
+    public static List<Membroequipa> listaAll(){
+        List<Membroequipa> listaPesquisa = HibernateGenericLib.executeHQLQuery(" from Membroequipa");
+        return listaPesquisa;
+    }
+    
+    public static void criarMembroEquipa(Membroequipa m){
+        HibernateGenericLib.saveObject(m);
+    }
+    
 }
