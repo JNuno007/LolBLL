@@ -25,4 +25,8 @@ public class EquipaServices {
         return lista;
     }
     
+    public static void saveEquipa(Equipa e){
+        HibernateGenericLib.saveObject(e);
+    }
+    
 }
