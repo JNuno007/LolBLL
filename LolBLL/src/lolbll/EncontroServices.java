@@ -18,10 +18,10 @@ public class EncontroServices {
 
     public EncontroServices() {
     }
-    
-    public static List<Encontro> listaEncontrosFromTeam(Equipa eq){
+
+    public static List<Encontro> listaEncontrosFromTeam(Equipa eq) {
         List<Encontro> lista = HibernateGenericLib.executeHQLQuery("from Encontro WHERE equipaByEquipa1 = " + eq.getId() + " OR equipaByEquipa2 = " + eq.getId());
         return lista;
     }
-    
+
 }

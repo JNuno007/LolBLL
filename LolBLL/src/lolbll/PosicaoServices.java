@@ -16,11 +16,11 @@ public class PosicaoServices {
 
     public PosicaoServices() {
     }
-    
-    public static Posicao getPosicao(String pos){
+
+    public static Posicao getPosicao(String pos) {
         List<Posicao> lista = hibernate.HibernateGenericLib.executeHQLQuery("from Posicao where sigla = '" + pos + "'");
         Posicao posicao = lista.get(0);
         return posicao;
     }
-    
+
 }

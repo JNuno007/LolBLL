@@ -18,16 +18,16 @@ public class TorneioServices {
 
     public TorneioServices() {
     }
-    
-    public static List<Torneio> listaNumTrofeusEquipa(Equipa eq){
+
+    public static List<Torneio> listaNumTrofeusEquipa(Equipa eq) {
         List<Torneio> lista = HibernateGenericLib.executeHQLQuery("from Torneio where equipa = " + eq.getId());
         return lista;
     }
-    
-    public static List<Torneio> listaTorneios(){
+
+    public static List<Torneio> listaTorneios() {
         List<Torneio> lista = HibernateGenericLib.executeHQLQuery("from Torneio");
-        
+
         return lista;
     }
-    
+
 }

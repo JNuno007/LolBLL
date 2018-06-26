@@ -13,7 +13,7 @@ import loldal.model.Champion;
  *
  * @author joaoc
  */
-public class ChampionServices extends Champion{
+public class ChampionServices extends Champion {
 
     public ChampionServices() {
     }
@@ -25,7 +25,5 @@ public class ChampionServices extends Champion{
     public ChampionServices(BigDecimal id, String nome, boolean ativo, Set estatisticasmembrojogos) {
         super(id, nome, ativo, estatisticasmembrojogos);
     }
-    
-    
-    
+
 }

@@ -13,12 +13,11 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
  *
  * @author joaoc
  */
-public class HibernateBLL{
-       
-    
-    public static void close(){
+public class HibernateBLL {
+
+    public static void close() {
         HibernateGenericLib.closeSession();
         StandardServiceRegistryBuilder.destroy(HibernateUtil.getSessionFactory().getSessionFactoryOptions().getServiceRegistry());
     }
-        
+
 }

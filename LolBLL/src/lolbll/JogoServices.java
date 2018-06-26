@@ -18,17 +18,17 @@ public class JogoServices {
 
     public JogoServices() {
     }
-    
-    public static List<Jogo> listaJogosEquipa1(Equipa eq){
+
+    public static List<Jogo> listaJogosEquipa1(Equipa eq) {
         List<Jogo> lista = HibernateGenericLib.executeHQLQuery("from Jogo where equipaByEquipa1 = " + eq.getId());
-        
+
         return lista;
     }
-    
-    public static List<Jogo> listaJogosEquipa2(Equipa eq){
+
+    public static List<Jogo> listaJogosEquipa2(Equipa eq) {
         List<Jogo> lista = HibernateGenericLib.executeHQLQuery("from Jogo where equipaByEquipa2 = " + eq.getId());
-        
+
         return lista;
     }
-    
+
 }

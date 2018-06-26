@@ -9,8 +9,6 @@ import hibernate.HibernateGenericLib;
 import java.util.List;
 import loldal.model.Equipa;
 
-
-
 /**
  *
  * @author joaoc
@@ -19,14 +17,14 @@ public class EquipaServices {
 
     public EquipaServices() {
     }
-    
-    public static List<Equipa> listaEquipas(){
+
+    public static List<Equipa> listaEquipas() {
         List<Equipa> lista = HibernateGenericLib.executeHQLQuery(" from Equipa");
         return lista;
     }
-    
-    public static void saveEquipa(Equipa e){
+
+    public static void saveEquipa(Equipa e) {
         HibernateGenericLib.saveObject(e);
     }
-    
+
 }

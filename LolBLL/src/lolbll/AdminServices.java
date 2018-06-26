@@ -16,11 +16,10 @@ public class AdminServices {
 
     public AdminServices() {
     }
-    
-    public static List<Admin> listaAdmins(){
+
+    public static List<Admin> listaAdmins() {
         List<Admin> admins = hibernate.HibernateGenericLib.executeHQLQuery("from Admin");
-        
+
         return admins;
     }
-    
 }

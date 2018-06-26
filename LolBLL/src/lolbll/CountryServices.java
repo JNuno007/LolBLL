@@ -5,7 +5,6 @@
  */
 package lolbll;
 
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import loldal.model.Pais;
@@ -18,11 +17,11 @@ public class CountryServices {
 
     public CountryServices() {
     }
-    
-    public static List<Pais> getListaPaises(){
+
+    public static List<Pais> getListaPaises() {
         List<Pais> paises = hibernate.HibernateGenericLib.executeHQLQuery("from Pais");
         paises.sort(Comparator.comparing((pais) -> pais.getNome()));
         return paises;
-    } 
-    
+    }
+
 }
