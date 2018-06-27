@@ -26,5 +26,18 @@ public class EquipaServices {
     public static void saveEquipa(Equipa e) {
         HibernateGenericLib.saveObject(e);
     }
+    
+    public static void atualizarEstadoEquipa(){
+        List<Equipa> lista = HibernateGenericLib.executeHQLQuery(" from Equipa");
+        
+        for(Equipa eq: lista){
+            if(eq.getMembroequipas().size() == 6){
+                eq.setAtivo(true);
+            }else{
+                eq.setAtivo(false);
+            }
+            saveEquipa(eq);
+        }
+    }
 
 }
