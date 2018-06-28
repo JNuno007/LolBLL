@@ -7,7 +7,9 @@ package lolbll;
 
 import hibernate.HibernateGenericLib;
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import loldal.model.Equipa;
@@ -48,8 +50,11 @@ public class MembroEquipaServices {
     }
 
     
-    public static List<Membroequipa> getAllMembrosFromTeam(Equipa team) {
+    public static Set<Membroequipa> getAllMembrosFromTeam(Equipa team) {
         List<Membroequipa> listaPesquisa = HibernateGenericLib.executeHQLQuery(" from Membroequipa where equipa = " + team.getId());
-        return listaPesquisa;
+        Set<Membroequipa> setPesquisa = new HashSet<>(listaPesquisa);
+        return setPesquisa;
     }
+    
+    
 }
