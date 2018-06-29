@@ -23,5 +23,9 @@ public class EncontroServices {
         List<Encontro> lista = HibernateGenericLib.executeHQLQuery("from Encontro WHERE equipaByEquipa1 = " + eq.getId() + " OR equipaByEquipa2 = " + eq.getId());
         return lista;
     }
+    
+    public static void saveEncontro(Encontro e){
+        HibernateGenericLib.saveObject(e);
+    }
 
 }

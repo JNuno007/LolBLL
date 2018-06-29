@@ -29,5 +29,9 @@ public class TorneioServices {
 
         return lista;
     }
+    
+    public static void saveTorneio(Torneio t){
+        HibernateGenericLib.saveObject(t);
+    }
 
 }

@@ -27,8 +27,9 @@ public class MembroEquipaServices {
     public static List<Membroequipa> listaJogadores() {
 
         List<Membroequipa> listaPesquisa = HibernateGenericLib.executeHQLQuery(" from Membroequipa where cargo = 'player'");
-        Comparator<Membroequipa> comparator = Comparator.comparing(m -> m.getEquipa().toString());
-        comparator = comparator.thenComparing(Comparator.comparing(m -> m.getNome()));
+//        Comparator<Membroequipa> comparator = Comparator.comparing(m -> m.getEquipa().toString());
+//        comparator = comparator.thenComparing(Comparator.comparing(m -> m.getNome()));
+        Comparator<Membroequipa> comparator = Comparator.comparing(m -> m.getNome().toLowerCase());
         Stream<Membroequipa> membroStream = listaPesquisa.stream().sorted(comparator);
         List<Membroequipa> listaOrdenada = membroStream.collect(Collectors.toList());
         return listaOrdenada;

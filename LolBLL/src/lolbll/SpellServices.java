@@ -6,24 +6,22 @@
 package lolbll;
 
 import hibernate.HibernateGenericLib;
-import java.math.BigDecimal;
 import java.util.List;
-import java.util.Set;
-import loldal.model.Champion;
+import loldal.model.Spell;
 
 /**
  *
  * @author joaoc
  */
-public class ChampionServices extends Champion {
+public class SpellServices {
 
-    public ChampionServices() {
+    public SpellServices() {
     }
-
-    public static List<Champion> getListChampions(){
-        List<Champion> list = HibernateGenericLib.executeHQLQuery(" from Champion");
+    
+    public static List<Spell> getListaSpells(){
+        List<Spell> list = HibernateGenericLib.executeHQLQuery("from Spell");
         
         return list;
     }
-
+    
 }
