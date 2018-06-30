@@ -6,6 +6,7 @@
 package lolbll;
 
 import hibernate.HibernateGenericLib;
+import java.util.Comparator;
 import java.util.List;
 import loldal.model.Runa;
 
@@ -20,7 +21,7 @@ public class RunesServices {
     
     public static List<Runa> getListRuna(){
         List<Runa> list = HibernateGenericLib.executeHQLQuery(" from Runa");
-        
+        list.sort(Comparator.comparing((runa) -> runa.getNome()));
         return list;
     }
     

@@ -6,6 +6,7 @@
 package lolbll;
 
 import hibernate.HibernateGenericLib;
+import java.util.Comparator;
 import java.util.List;
 import loldal.model.Item;
 
@@ -20,7 +21,7 @@ public class ItemServices {
     
     public static List<Item> getListaItems(){
         List<Item> items = HibernateGenericLib.executeHQLQuery("from Item");
-        
+        items.sort(Comparator.comparing((item) -> item.getNome()));
         return items;
     }
     

@@ -7,6 +7,7 @@ package lolbll;
 
 import hibernate.HibernateGenericLib;
 import java.math.BigDecimal;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
 import loldal.model.Champion;
@@ -22,7 +23,7 @@ public class ChampionServices extends Champion {
 
     public static List<Champion> getListChampions(){
         List<Champion> list = HibernateGenericLib.executeHQLQuery(" from Champion");
-        
+        list.sort(Comparator.comparing((champion) -> champion.getNome()));
         return list;
     }
 

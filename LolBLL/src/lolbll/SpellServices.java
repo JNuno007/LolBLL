@@ -6,6 +6,7 @@
 package lolbll;
 
 import hibernate.HibernateGenericLib;
+import java.util.Comparator;
 import java.util.List;
 import loldal.model.Spell;
 
@@ -20,7 +21,7 @@ public class SpellServices {
     
     public static List<Spell> getListaSpells(){
         List<Spell> list = HibernateGenericLib.executeHQLQuery("from Spell");
-        
+        list.sort(Comparator.comparing((spell) -> spell.getNome()));
         return list;
     }
     
