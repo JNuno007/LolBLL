@@ -5,6 +5,7 @@
  */
 package lolbll;
 
+import hibernate.HibernateGenericLib;
 import java.util.List;
 import loldal.model.Admin;
 
@@ -21,5 +22,9 @@ public class AdminServices {
         List<Admin> admins = hibernate.HibernateGenericLib.executeHQLQuery("from Admin");
 
         return admins;
+    }
+    
+    public static void saveAdmin(Admin admin){
+        HibernateGenericLib.saveObject(admin);
     }
 }
