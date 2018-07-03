@@ -19,5 +19,9 @@ public class HibernateBLL {
         HibernateGenericLib.closeSession();
         StandardServiceRegistryBuilder.destroy(HibernateUtil.getSessionFactory().getSessionFactoryOptions().getServiceRegistry());
     }
+    
+    public static void clearCache(){
+        HibernateGenericLib.clearCache();
+    }
 
 }

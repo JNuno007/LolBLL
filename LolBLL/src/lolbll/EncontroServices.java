@@ -27,5 +27,17 @@ public class EncontroServices {
     public static void saveEncontro(Encontro e){
         HibernateGenericLib.saveObject(e);
     }
+    
+    //Método que corre quando um jogo é adicionado
+    public static void verificaEncontroConcluído(Encontro en){
+        if(en.getVitoriaequipa1().intValue() == 3){
+            en.setEstado("FINALIZADO");
+            en.setEquipaByVencedor(en.getEquipaByEquipa1());
+        }
+        if(en.getVitoriaequipa2().intValue() == 3){
+            en.setEstado("FINALIZADO");
+            en.setEquipaByVencedor(en.getEquipaByEquipa2());
+        }
+    }
 
 }
