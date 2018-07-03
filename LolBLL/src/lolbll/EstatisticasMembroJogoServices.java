@@ -42,5 +42,9 @@ public class EstatisticasMembroJogoServices extends Estatisticasmembrojogo {
 
         return lista;
     }
+    
+    public static void saveEstatisticasMembroJogo(Estatisticasmembrojogo est){
+        HibernateGenericLib.saveObject(est);
+    }
 
 }

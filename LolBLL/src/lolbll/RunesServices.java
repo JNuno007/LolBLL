@@ -24,5 +24,4 @@ public class RunesServices {
         list.sort(Comparator.comparing((runa) -> runa.getNome()));
         return list;
     }
-    
 }

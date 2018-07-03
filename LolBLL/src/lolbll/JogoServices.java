@@ -30,5 +30,8 @@ public class JogoServices {
 
         return lista;
     }
-
+    
+    public static void saveJogo(Jogo j){
+        HibernateGenericLib.saveObject(j);
+    }
 }

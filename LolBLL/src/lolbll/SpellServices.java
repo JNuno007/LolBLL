@@ -24,5 +24,4 @@ public class SpellServices {
         list.sort(Comparator.comparing((spell) -> spell.getNome()));
         return list;
     }
-    
 }
