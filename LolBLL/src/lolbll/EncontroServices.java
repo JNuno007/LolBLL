@@ -33,10 +33,12 @@ public class EncontroServices {
         if(en.getVitoriaequipa1().intValue() == 3){
             en.setEstado("FINALIZADO");
             en.setEquipaByVencedor(en.getEquipaByEquipa1());
+            saveEncontro(en);
         }
         if(en.getVitoriaequipa2().intValue() == 3){
             en.setEstado("FINALIZADO");
             en.setEquipaByVencedor(en.getEquipaByEquipa2());
+            saveEncontro(en);
         }
     }
 
