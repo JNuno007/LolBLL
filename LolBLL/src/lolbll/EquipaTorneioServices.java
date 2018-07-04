@@ -5,7 +5,10 @@
  */
 package lolbll;
 
+import hibernate.HibernateGenericLib;
+import java.util.List;
 import loldal.model.Equipatorneio;
+import loldal.model.Torneio;
 
 /**
  *
@@ -18,6 +21,15 @@ public class EquipaTorneioServices {
     
     public static void saveEquipaTorneio(Equipatorneio et){
         hibernate.HibernateGenericLib.saveObject(et);
+    }
+    
+    public static void deleteEquipaTorneio(Equipatorneio et){
+        HibernateGenericLib.deleteObject(et);
+    }
+    
+    public static List<Equipatorneio> getListaDeTorneio(Torneio t){
+        List<Equipatorneio> list = HibernateGenericLib.executeHQLQuery("from Equipatorneio where torneio="+t.getId());
+        return list;
     }
     
 }
