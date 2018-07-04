@@ -27,4 +27,8 @@ public class AdminServices {
     public static void saveAdmin(Admin admin){
         HibernateGenericLib.saveObject(admin);
     }
+    
+    public static void updateAdmin(Admin admin){
+        HibernateGenericLib.updateObject(admin);
+    }
 }

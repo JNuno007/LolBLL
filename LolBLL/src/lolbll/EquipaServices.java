@@ -30,9 +30,18 @@ public class EquipaServices {
         List<Equipa> lista = HibernateGenericLib.executeHQLQuery(" from Equipa where ativo = 1");
         return lista;
     }
+    
+    public static List<Equipa> listaEquipasInativas() {
+        List<Equipa> lista = HibernateGenericLib.executeHQLQuery(" from Equipa where ativo = 0");
+        return lista;
+    }
 
     public static void saveEquipa(Equipa e) {
         HibernateGenericLib.saveObject(e);
+    }
+    
+    public static void updateEquipa(Equipa e) {
+        HibernateGenericLib.updateObject(e);
     }
     
     public static void atualizarEstadoEquipa(){
@@ -53,7 +62,7 @@ public class EquipaServices {
            }else{
                eq.setAtivo(false);
            }
-            saveEquipa(eq);
+            updateEquipa(eq);
         }
     }
     

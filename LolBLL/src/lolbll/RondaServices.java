@@ -31,6 +31,10 @@ public class RondaServices {
         hibernate.HibernateGenericLib.saveObject(r);
     }
     
+    public static void updateRonda(Ronda r){
+        hibernate.HibernateGenericLib.updateObject(r);
+    }
+    
     public static void verificaRondaConcluida(Ronda r){
         int nEquipas = r.getTorneio().getEquipatorneios().size();
         int cont = 0;
@@ -42,7 +46,7 @@ public class RondaServices {
             }
             if(r.getEncontros().size() == cont){
                 r.setEstado("FINALIZADO");
-                RondaServices.saveRonda(r);
+                RondaServices.updateRonda(r);
                 List<Encontro> listaEncontros = new ArrayList<>();
                 Ronda ronda = new Ronda();
                 switch(r.getNronda().intValue()){
@@ -81,7 +85,7 @@ public class RondaServices {
                         encontro2.setEquipaByEquipa2(listaEncontros.get(3).getEquipaByVencedor());
 
 
-                        TorneioServices.saveTorneio(r.getTorneio());
+                        TorneioServices.updateTorneio(r.getTorneio());
                         RondaServices.saveRonda(ronda);
                         EncontroServices.saveEncontro(encontro1);
                         EncontroServices.saveEncontro(encontro2);
@@ -110,7 +114,7 @@ public class RondaServices {
                         finals.setEquipaByEquipa1(listaEncontros.get(0).getEquipaByVencedor());
                         finals.setEquipaByEquipa2(listaEncontros.get(1).getEquipaByVencedor());
                         
-                        TorneioServices.saveTorneio(r.getTorneio());
+                        TorneioServices.updateTorneio(r.getTorneio());
                         RondaServices.saveRonda(ronda);
                         EncontroServices.saveEncontro(finals);
                         break;
@@ -119,7 +123,7 @@ public class RondaServices {
                         temp.addAll(r.getEncontros());
                         r.getTorneio().setEstado("FINALIZADO");
                         r.getTorneio().setEquipa(temp.get(0).getEquipaByVencedor());
-                        TorneioServices.saveTorneio(r.getTorneio());
+                        TorneioServices.updateTorneio(r.getTorneio());
                         break;
                 }
             }
@@ -132,7 +136,7 @@ public class RondaServices {
             }
             if(r.getEncontros().size() == cont){
                 r.setEstado("FINALIZADO");
-                RondaServices.saveRonda(r);
+                RondaServices.updateRonda(r);
                 List<Encontro> listaEncontros = new ArrayList<>();
                 Ronda ronda = new Ronda();
                 switch(r.getNronda().intValue()){
@@ -189,7 +193,7 @@ public class RondaServices {
                         encontro4.setEquipaByEquipa2(listaEncontros.get(7).getEquipaByVencedor());
 
 
-                        TorneioServices.saveTorneio(r.getTorneio());
+                        TorneioServices.updateTorneio(r.getTorneio());
                         RondaServices.saveRonda(ronda);
                         EncontroServices.saveEncontro(encontro1);
                         EncontroServices.saveEncontro(encontro2);
@@ -231,7 +235,7 @@ public class RondaServices {
                         encontroSF2.setEquipaByEquipa2(listaEncontros.get(3).getEquipaByVencedor());
 
 
-                        TorneioServices.saveTorneio(r.getTorneio());
+                        TorneioServices.updateTorneio(r.getTorneio());
                         RondaServices.saveRonda(ronda);
                         EncontroServices.saveEncontro(encontroSF1);
                         EncontroServices.saveEncontro(encontroSF2);
@@ -260,7 +264,7 @@ public class RondaServices {
                         finals.setEquipaByEquipa1(listaEncontros.get(0).getEquipaByVencedor());
                         finals.setEquipaByEquipa2(listaEncontros.get(1).getEquipaByVencedor());
                         
-                        TorneioServices.saveTorneio(r.getTorneio());
+                        TorneioServices.updateTorneio(r.getTorneio());
                         RondaServices.saveRonda(ronda);
                         EncontroServices.saveEncontro(finals);
                         break;
@@ -269,7 +273,7 @@ public class RondaServices {
                         temp.addAll(r.getEncontros());
                         r.getTorneio().setEstado("FINALIZADO");
                         r.getTorneio().setEquipa(temp.get(0).getEquipaByVencedor());
-                        TorneioServices.saveTorneio(r.getTorneio());
+                        TorneioServices.updateTorneio(r.getTorneio());
                         break;
                 }
             }

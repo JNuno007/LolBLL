@@ -49,5 +49,9 @@ public class TorneioServices {
     public static void saveTorneio(Torneio t){
         HibernateGenericLib.saveObject(t);
     }
+    
+    public static void updateTorneio(Torneio t){
+        HibernateGenericLib.updateObject(t);
+    }
 
 }

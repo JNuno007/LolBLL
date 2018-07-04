@@ -23,6 +23,10 @@ public class EquipaTorneioServices {
         hibernate.HibernateGenericLib.saveObject(et);
     }
     
+    public static void updateEquipaTorneio(Equipatorneio et){
+        hibernate.HibernateGenericLib.updateObject(et);
+    }
+    
     public static void deleteEquipaTorneio(Equipatorneio et){
         HibernateGenericLib.deleteObject(et);
     }

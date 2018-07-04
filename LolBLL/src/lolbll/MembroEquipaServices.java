@@ -44,7 +44,11 @@ public class MembroEquipaServices {
     public static void criarMembroEquipa(Membroequipa m) {
         HibernateGenericLib.saveObject(m);
     }
-
+    
+    public static void updateMembroEquipa(Membroequipa m) {
+        HibernateGenericLib.updateObject(m);
+    }
+    
     public static List<Membroequipa> getAllMembrosDisponiveis() {
         List<Membroequipa> listaPesquisa = HibernateGenericLib.executeHQLQuery(" from Membroequipa where equipa is null");
         return listaPesquisa;

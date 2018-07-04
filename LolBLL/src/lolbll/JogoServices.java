@@ -34,4 +34,8 @@ public class JogoServices {
     public static void saveJogo(Jogo j){
         HibernateGenericLib.saveObject(j);
     }
+    
+    public static void updateJogo(Jogo j){
+        HibernateGenericLib.updateObject(j);
+    }
 }

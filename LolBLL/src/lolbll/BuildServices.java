@@ -20,5 +20,4 @@ public class BuildServices {
     public static void saveBuild(Build b){
         HibernateGenericLib.saveObject(b);
     }
-    
 }
