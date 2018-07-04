@@ -85,7 +85,6 @@ public class RondaServices {
                         RondaServices.saveRonda(ronda);
                         EncontroServices.saveEncontro(encontro1);
                         EncontroServices.saveEncontro(encontro2);
-                        HibernateGenericLib.clearCache();
                         break;
                     case 2:
                         r.getTorneio().setRondaatual(new BigDecimal(3));
@@ -114,7 +113,6 @@ public class RondaServices {
                         TorneioServices.saveTorneio(r.getTorneio());
                         RondaServices.saveRonda(ronda);
                         EncontroServices.saveEncontro(finals);
-                        HibernateGenericLib.clearCache();
                         break;
                     case 3:
                         List<Encontro> temp = new ArrayList<>();
@@ -122,7 +120,6 @@ public class RondaServices {
                         r.getTorneio().setEstado("FINALIZADO");
                         r.getTorneio().setEquipa(temp.get(0).getEquipaByVencedor());
                         TorneioServices.saveTorneio(r.getTorneio());
-                        HibernateGenericLib.clearCache();
                         break;
                 }
             }
@@ -198,7 +195,6 @@ public class RondaServices {
                         EncontroServices.saveEncontro(encontro2);
                         EncontroServices.saveEncontro(encontro3);
                         EncontroServices.saveEncontro(encontro4);
-                        HibernateGenericLib.clearCache();
                         break;
                     case 2:
                         r.getTorneio().setRondaatual(new BigDecimal(3));
@@ -239,7 +235,6 @@ public class RondaServices {
                         RondaServices.saveRonda(ronda);
                         EncontroServices.saveEncontro(encontroSF1);
                         EncontroServices.saveEncontro(encontroSF2);
-                        HibernateGenericLib.clearCache();
                         break;
                     case 3:
                         r.getTorneio().setRondaatual(new BigDecimal(4));
@@ -268,7 +263,6 @@ public class RondaServices {
                         TorneioServices.saveTorneio(r.getTorneio());
                         RondaServices.saveRonda(ronda);
                         EncontroServices.saveEncontro(finals);
-                        HibernateGenericLib.clearCache();
                         break;
                     case 4:
                         List<Encontro> temp = new ArrayList<>();
@@ -276,7 +270,6 @@ public class RondaServices {
                         r.getTorneio().setEstado("FINALIZADO");
                         r.getTorneio().setEquipa(temp.get(0).getEquipaByVencedor());
                         TorneioServices.saveTorneio(r.getTorneio());
-                        HibernateGenericLib.clearCache();
                         break;
                 }
             }
